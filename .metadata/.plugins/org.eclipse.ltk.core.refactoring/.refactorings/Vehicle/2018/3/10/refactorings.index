@@ -1,0 +1,16 @@
+1520259166378	Move 'success.jsp' to 'webapp'
+1520259185097	Move 2 resources to 'views'
+1520259198972	Rename resource 'index.jsp'
+1520259384065	Delete element
+1520260308711	Copy file
+1520260316449	Copy file
+1520260658924	Copy files
+1520260730498	Copy package
+1520260817005	Copy package
+1520260999981	Copy file
+1520263829702	Rename resource 'product.jsp'
+1520263868374	Delete element
+1520264002537	Rename type 'ProductController'
+1520264014562	Rename type 'Product'
+1520264028564	Rename type 'ProductDAO'
+1520611529464	Delete element
