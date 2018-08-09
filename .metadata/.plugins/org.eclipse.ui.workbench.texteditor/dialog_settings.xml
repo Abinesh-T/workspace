@@ -2,16 +2,25 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;" key="selection"/>
+		<item value="User" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Product"/>
+			<item value="p"/>
+			<item value="ProductModel"/>
+			<item value="com"/>
+			<item value="vinodh"/>
+			<item value="com.vinodh.Controller"/>
 			<item value="&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;"/>
 			<item value="ShipDAO"/>
 		</list>
 		<list key="replacehistory">
+			<item value="User"/>
+			<item value="u"/>
+			<item value="abi"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

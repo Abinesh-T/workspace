@@ -1,0 +1,89 @@
+package com.abi.controller;
+
+import java.io.IOException;
+import java.util.Date;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import model.User;
+import model.UserDAO;
+
+/**
+ * Servlet implementation class UserController
+ */
+public class UserController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public UserController() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		 String Name=request.getParameter("Name");
+		 String Sample_Type=request.getParameter("Sample_Type");
+		 String Weight=request.getParameter("Weight");
+		 String Gold=request.getParameter("Gold");
+		 String Silver=request.getParameter("Silver");
+		 String Copper=request.getParameter("Copper");
+		 String Zinc=request.getParameter("Zinc");
+		 String KDM=request.getParameter("KDM"); 
+		 String Nickel=request.getParameter("Nickel");
+		 String Iridium=request.getParameter("Iridium");
+		 String Tin=request.getParameter("Tin");
+		 String Iron=request.getParameter("Iron");
+		 String Rhodium=request.getParameter("Rhodium");
+		 String Others=request.getParameter("Others");
+		 User u=new User();
+		 u.setName(Name);
+		 u.setSample_type(Sample_Type);
+		 u.setWeight(Weight);
+		 u.setGold(Gold);
+		 u.setSilver(Silver);
+		 u.setCopper(Copper);
+		 u.setZinc(Zinc);
+		 u.setKDM(KDM);
+		 u.setNickel(Nickel);
+		 u.setIridium(Iridium);
+		 u.setTin(Tin);
+		 u.setIron(Iron);
+		 u.setRhodium(Rhodium);
+		 u.setOthers(Others);
+		 Date date = new Date();  
+		 u.setDate(date);  
+		 UserDAO ud=new UserDAO();
+		 boolean b =ud.insertUser(u);
+		 if(b)
+			{
+				RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+				rd.forward(request, response);
+			}
+			
+		
+		else
+		{
+			RequestDispatcher rd = request.getRequestDispatcher("Inventory.jsp");
+			rd.forward(request, response);
+		}
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

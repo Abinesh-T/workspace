@@ -1,0 +1,95 @@
+package com.abi.Controller;
+
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.abi.model.User;
+import com.abi.model.UserDAO;
+
+@Controller
+public class UserController {
+	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String home() {
+		return "index";
+	}
+	@RequestMapping(value ="/index",method = RequestMethod.GET)
+	public String indexPage()
+	{
+		return "index";
+	}
+	/*@RequestMapping(value ="/Inventory",method = RequestMethod.GET)
+	public String InventoryPage()
+	{
+		return "Inventory";
+	}*/
+	@RequestMapping(value ="/Inventory",method = RequestMethod.GET)
+	  public ModelAndView getlist() 
+	   {
+			ModelAndView mv=new ModelAndView("Inventory");
+			//List<User>ulist=UserDAO.getUser();
+			UserDAO u=new UserDAO(); 
+			List<User> ulist=u.getUser();
+			mv.addObject("ulist", ulist);
+			   
+			 return mv;
+		
+
+	   }
+	/*@RequestMapping("/welcome/{pName}/{pCost}")
+	public String welcome(Model m,@PathVariable Map<String,String> pathArgs) {
+		String pName = pathArgs.get("pName");
+		String pCost = pathArgs.get("pCost");
+		m.addAttribute("name",pName);
+		m.addAttribute("cost",pCost);
+		m.addAttribute("HeaderName","Welcome to E-CART");
+		return "welcome";
+	}
+	
+	@ModelAttribute
+	public void commonData(Model m1) {
+		m1.addAttribute("HeaderName","Welcome to E-CART");
+	}
+	
+	@RequestMapping(value = "/productSuccess", method=RequestMethod.POST)
+	public String productSuccess(@Valid @ModelAttribute("product1")Product product1, BindingResult result) {
+		
+		if(result.hasErrors())
+		{
+			return "product";
+		}
+		
+		return "productSuccess";
+		
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="/products", method=RequestMethod.GET)
+	public ArrayList<Product> getProducts(){
+		
+		Product p1 = new Product();
+		p1.setpName("Samsung Mobile");
+		p1.setpCost(5000L);
+		
+		Product p2 = new Product();
+		p2.setpName("Apple Mobile");
+		p2.setpCost(8000L);
+		
+		Product p3 = new Product();
+		p3.setpName("Sony Mobile");
+		p3.setpCost(4000L);
+		
+		ArrayList<Product> al = new ArrayList<Product>();
+		al.add(p1);
+		al.add(p2);
+		al.add(p3);
+		
+		return al;
+		
+	}*/
+	
+}

@@ -4,12 +4,10 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
-			<item value="com.jackrutorial"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
-			<item value="SpringMVCSignupLoginPasswordEncoder"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -35,6 +33,9 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\Karthigaivel\git\ProjectMVC"/>
+			<item value="C:\Users\Karthigaivel\git\springProject"/>
+			<item value="C:\Users\Karthigaivel\workspace\HCP-master\Java-development-on-HCP"/>
 			<item value="C:\Users\Karthigaivel\workspace\SpringSecurityPasswordEncodingWithBcryptExample"/>
 			<item value="C:\Users\Karthigaivel\Worksapce\SpringSecurityPasswordEncodingWithBcryptExample"/>
 			<item value="C:\other\temp_backup"/>
@@ -67,6 +68,8 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\Karthigaivel\workspace\Billing\src\main\java\com\abi\app\AppConfig.java"/>
+			<item value="C:\other\temp_backup\Ecommerce\src\main\java\com\niit\Controller\HomeController.java"/>
 			<item value="C:\Users\Karthigaivel\workspace"/>
 			<item value="C:\Users\Karthigaivel\workspace\Hibernate-demo-master"/>
 		</list>
@@ -81,10 +84,15 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="com.sasoftwares.Softwares"/>
+			<item value="com.sasoftwares.billing"/>
 		</list>
 		<list key="groupId">
+			<item value="com.sasoftwares"/>
 		</list>
 		<list key="artifactId">
+			<item value="Softwares"/>
+			<item value="billing"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -95,6 +103,7 @@
 			<item value="[name]"/>
 		</list>
 		<list key="version">
+			<item value="1.0"/>
 			<item value="0.0.1-SNAPSHOT"/>
 		</list>
 	</section>

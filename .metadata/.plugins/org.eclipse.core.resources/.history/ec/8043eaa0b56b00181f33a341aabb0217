@@ -1,0 +1,21 @@
+package model;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+public class UserDAO {
+
+	private Transaction trans;
+	private Session sess;
+	private boolean b=true;
+	
+	public void insertUser(User u) {
+		DbConfig db=new DbConfig();
+		sess=db.getSess();
+		trans=sess.beginTransaction();
+		sess.save(u);
+		trans.commit();
+		sess.close();
+		
+	}
+}

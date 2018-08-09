@@ -1,0 +1,5 @@
+package com.abi.GoldTesting_backend.DAO;
+
+public class UserDAO {
+
+}

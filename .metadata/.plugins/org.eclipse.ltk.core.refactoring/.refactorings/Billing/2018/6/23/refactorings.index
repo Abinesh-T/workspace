@@ -1,0 +1,12 @@
+1528527348327	Delete element
+1528532726404	Infer generic type arguments
+1528559357486	Move 4 resources to 'views'
+1528559365664	Move 'views' to 'webapp'
+1528559455507	Rename package 'controller'
+1528559509477	Rename package 'model'
+1528559602324	Rename package 'com.abi.controller'
+1528559680514	Rename type 'UserController'
+1528559762784	Rename type 'userController'
+1528559941250	Delete element
+1528560850925	Delete elements
+1528560989174	Delete element

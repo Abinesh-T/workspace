@@ -1,0 +1,60 @@
+package com.abi.model;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.niit.Ecommerce_backend.Model.ProductModel;
+
+public class UserDAO {
+
+	@Autowired
+	private SessionFactory sessionFactory;
+	
+	
+	public void setSessionFactory(SessionFactory sf){
+		this.sessionFactory = sf;
+	}
+	
+	public void addProduct(User u)
+	{
+		Session s=sessionFactory.openSession();
+		s.beginTransaction();
+		s.save(u);
+		s.getTransaction().commit();
+		s.close();
+	}
+		
+		
+	public List<User> getAll()
+	{
+		Session s=sessionFactory.openSession();
+		s.beginTransaction();
+		Query query =s.createQuery("from ProductModel");        
+		List<User> list=query.list();
+		System.out.println(list);
+		s.getTransaction().commit();
+		return list;
+	}
+	public void delete(ProductModel p) {
+		Session s=sessionFactory.openSession();
+		s.beginTransaction();
+		s.delete(p);
+		s.getTransaction().commit();
+		s.close();sessionFactory.openSession().delete(p);
+		
+	}
+	public void update(ProductModel product) {
+
+		Session s=sessionFactory.openSession();
+		s.beginTransaction();
+		s.update(product);
+		s.getTransaction().commit();
+		s.close();
+		
+	}
+}

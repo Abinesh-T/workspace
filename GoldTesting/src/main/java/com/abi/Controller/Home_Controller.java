@@ -1,0 +1,78 @@
+package com.abi.Controller;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.abi.GoldTesting_backend.DAO.UserDAO;
+import com.abi.GoldTesting_backend.Model.UserModel;
+
+
+
+@Controller
+public class Home_Controller {
+	
+	 @RequestMapping(value="/")
+		public ModelAndView IndexPage()
+		{
+	        ModelAndView mt=new ModelAndView("index");
+	        return mt;
+	    
+		}
+	 @RequestMapping(value="/index")
+		public ModelAndView indexPage()
+		{
+	        ModelAndView mt=new ModelAndView("index");
+	        return mt;
+	    
+	
+	 @RequestMapping(value="/Inventory")
+		public ModelAndView InventoryPage()
+		{
+		 ModelAndView mt2=new ModelAndView("Inventory");
+		 return mt2;
+
+		}
+	 @RequestMapping(value ="/submit")
+	 public ModelAndView addUser(HttpServletRequest request)
+	 {
+		 String Name=request.getParameter("Name");
+		 String Sample_Type=request.getParameter("Sample_Type");
+		 String Weight=request.getParameter("Weight");
+		 String Gold=request.getParameter("Gold");
+		 String Silver=request.getParameter("Silver");
+		 String Copper=request.getParameter("Copper");
+		 String Zinc=request.getParameter("Zinc");
+		 String KDM=request.getParameter("KDM"); 
+		 String Nickel=request.getParameter("Nickel");
+		 String Iridium=request.getParameter("Iridium");
+		 String Tin=request.getParameter("Tin");
+		 String Iron=request.getParameter("Iron");
+		 String Rhodium=request.getParameter("Rhodium");
+		 String Others=request.getParameter("Others");
+		 UserModel u=new UserModel();
+		 u.setName(Name);
+		 u.setSample_type(Sample_Type);
+		 u.setWeight(Weight);
+		 u.setGold(Gold);
+		 u.setSilver(Silver);
+		 u.setCopper(Copper);
+		 u.setZinc(Zinc);
+		 u.setKDM(KDM);
+		 u.setNickel(Nickel);
+		 u.setIridium(Iridium);
+		 u.setTin(Tin);
+		 u.setIron(Iron);
+		 u.setRhodium(Rhodium);
+		 u.setOthers(Others);
+		 UserDAO user=new UserDAO();
+		 user.addUser(u);
+		return null;
+	 }
+	  
+		
+
+}

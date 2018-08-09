@@ -1,0 +1,42 @@
+package model;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+
+public class UserDAO {
+
+	private Transaction trans;
+	private Session sess;
+	private boolean b=true;
+	public boolean insertUser(User u) {
+		try
+		{
+			DbConfig db=new DbConfig();
+			sess=db.getSess();
+			trans=sess.beginTransaction();
+			sess.save(u);
+			trans.commit();
+			sess.close();
+			
+		}
+		catch(Exception ex)
+		{
+			ex.printStackTrace();
+			trans.rollback();
+			b=false;
+		}
+		return b;
+		}
+	@SuppressWarnings("rawtypes")
+	public List<User> getProducts()
+	{
+		
+		Query query = sess.createQuery("from USERMODEL");
+		List<User> lp = (List<User>)query.getResultList();
+		return lp;
+		
+	}
+}

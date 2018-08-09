@@ -1,0 +1,25 @@
+package com.abi.Controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class Home_Controller {
+	
+	 @RequestMapping(value="/")
+		public ModelAndView indexPage()
+		{
+	        ModelAndView mt=new ModelAndView("index");
+	        return mt;
+	    
+		}
+	 @RequestMapping(value="/Home")
+		public ModelAndView HomePage()
+		{
+	        ModelAndView mt1=new ModelAndView("index");
+	        return mt1;
+	    
+		}
+
+}
